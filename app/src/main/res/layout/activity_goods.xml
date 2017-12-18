@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwie.three.view.GoodsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@mipmap/leftjiantou"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品详情"
+            android:textSize="25sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="锤子"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_branchprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="原价："
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="优惠价："
+        android:padding="10dp"
+        android:textColor="#ff3306"/>
+
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加入购物车"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>
+
