@@ -2,6 +2,7 @@ package com.bwie.three.model;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import com.bwie.three.bean.ProductBean;
 import com.bwie.three.net.Api;
@@ -22,12 +23,14 @@ import okhttp3.Response;
 public class ProductModel implements IProductModel{
 
     private Handler handler=new Handler(Looper.getMainLooper());
-    @Override
-    public void getProduct(String pid, final OnNetListener<ProductBean> onNetListener) {
-        Map<String,String>map=new HashMap<>();
-        map.put("pid",pid);
-        String path="https://www.zhaoapi.cn/product/getProductDetail";
-        OkHttpUtils.getHttpUtils().doPost(Api.PRODUCT, map, new Callback() {
+
+    public void getGoods(String pid, final OnNetListener<ProductBean> onNetListener){
+        //拼接参数
+        Map<String,String> params = new HashMap<>();
+        params.put("pid",pid);
+        params.put("source","android");
+        //调用网络请求获取数据
+        OkHttpUtils.getHttpUtils().doPost(Api.PRODUCT, params, new Callback() {
             @Override
             public void onFailure(Call call, final IOException e) {
                 handler.post(new Runnable() {

@@ -1,7 +1,7 @@
 package com.bwie.three.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -13,7 +13,8 @@ import com.bwie.three.R;
 import com.bwie.three.presenter.ProductPresenter;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-public class GoodsActivity extends AppCompatActivity implements IProductActivity,View.OnClickListener{
+public class GoodsActivity extends AppCompatActivity implements IProductActivity, View.OnClickListener {
+
 
     private ImageView mBack;
     private ImageView mImg;
@@ -34,19 +35,20 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
      */
     private Button mAdd;
     private LinearLayout mActivityMain;
-    private ProductPresenter productPresenter;
-    private String str="加入购物车成功";
+    private ProductPresenter productPresenter=new ProductPresenter(this);
+    private String str = "加购成功";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goods);
         initView();
-        productPresenter=new ProductPresenter(this);
-        productPresenter.getProduct("1");
+        productPresenter = new ProductPresenter(this);
+        productPresenter.getGood("1");
     }
 
     private void initView() {
+
         mBack = (ImageView) findViewById(R.id.back);
         mBack.setOnClickListener(this);
         mImg = (ImageView) findViewById(R.id.img);
@@ -67,17 +69,17 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
                 this.finish();
                 break;
             case R.id.add:
-                toadd(str);
+                toAdd(str);
                 break;
         }
     }
 
 
-    @Override
-    public void setiv(String url) {
-        ImageLoader.getInstance().displayImage(url,mImg);
-    }
 
+    @Override
+    public void setiv1(String url) {
+        ImageLoader.getInstance().displayImage(url, mImg);
+    }
     @Override
     public void settv1(String tv1) {
         mTvName.setText(tv1);
@@ -94,7 +96,8 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
     }
 
     @Override
-    public void toadd(String msg) {
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+    public void toAdd(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
+
 }

@@ -7,6 +7,7 @@ import com.bwie.three.net.OnNetListener;
 
 
 public interface IProductModel {
-    public void getProduct(String pid, OnNetListener<ProductBean> onNetListener);
+    //获取商品详情方法
+    public void getGoods(String pid, OnNetListener<ProductBean> onNetListener);
 
 }

@@ -13,6 +13,9 @@ import com.bwie.three.bean.SearchBean;
 
 import java.util.List;
 
+/**
+ * Created by ASUS on 2017/12/16.
+ */
 public class MyRecyclerAdapter extends RecyclerView.Adapter{
     private List<SearchBean.DataBean>list;
     Context context;

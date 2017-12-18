@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -167,6 +168,7 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
 
     @Override
     public void onSuccess(List<SearchBean.DataBean> lists) {
+        //Log.e("QQQQ",lists.size()+"");
         list.addAll(lists);
         myRecyclerAdapter.notifyDataSetChanged();
     }

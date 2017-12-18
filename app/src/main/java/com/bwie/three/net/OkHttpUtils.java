@@ -16,7 +16,7 @@ public class OkHttpUtils {
 
     public OkHttpUtils(){
         client=new OkHttpClient.Builder()
-                .addInterceptor(new MyInterceptor())
+                //.addInterceptor(new MyInterceptor())
                 .readTimeout(5, TimeUnit.SECONDS)
                 .connectTimeout(5,TimeUnit.SECONDS)
                 .build();

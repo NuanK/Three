@@ -12,7 +12,7 @@ import okhttp3.Response;
 
 public class SearchModel{
     public void getData(String name, String page, final ModuleListeren moduleListeren){
-        String url="http://120.27.23.105/product/searchProducts?keywords="+name+"&page="+page;
+        String url="http://120.27.23.105/product/searchProducts?source=android&keywords="+name+"&page="+page;
         OkHttpUtils.getHttpUtils().doGet(url, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
