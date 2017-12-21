@@ -67,9 +67,7 @@ public class SearchActivity extends AppCompatActivity implements SearchPresenter
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent=new Intent(SearchActivity.this,GoodsActivity.class);
-
                 startActivity(intent);
-                Toast.makeText(SearchActivity.this, "position" + position, Toast.LENGTH_SHORT).show();
             }
         });
 

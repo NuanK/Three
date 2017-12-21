@@ -1,5 +1,7 @@
 package com.bwie.three.view;
 
+import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,8 +37,12 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
      */
     private Button mAdd;
     private LinearLayout mActivityMain;
-    private ProductPresenter productPresenter=new ProductPresenter(this);
+    private ProductPresenter productPresenter = new ProductPresenter(this);
     private String str = "加购成功";
+    /**
+     * 购物车
+     */
+    private Button mCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +60,14 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
         mImg = (ImageView) findViewById(R.id.img);
         mTvName = (TextView) findViewById(R.id.tv_name);
         mTvBranchprice = (TextView) findViewById(R.id.tv_branchprice);
+        //给字体加横线。。
+        mTvBranchprice.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG);
         mTvPrice = (TextView) findViewById(R.id.tv_price);
         mAdd = (Button) findViewById(R.id.add);
         mAdd.setOnClickListener(this);
         mActivityMain = (LinearLayout) findViewById(R.id.activity_main);
+        mCart = (Button) findViewById(R.id.cart);
+        mCart.setOnClickListener(this);
     }
 
     @Override
@@ -71,15 +81,19 @@ public class GoodsActivity extends AppCompatActivity implements IProductActivity
             case R.id.add:
                 toAdd(str);
                 break;
+            case R.id.cart:
+                Intent intent=new Intent(this,CartActivity.class);
+                startActivity(intent);
+                break;
         }
     }
-
 
 
     @Override
     public void setiv1(String url) {
         ImageLoader.getInstance().displayImage(url, mImg);
     }
+
     @Override
     public void settv1(String tv1) {
         mTvName.setText(tv1);
