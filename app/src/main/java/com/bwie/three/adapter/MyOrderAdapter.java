@@ -14,9 +14,8 @@ import com.bwie.three.bean.PayBean;
 
 import java.util.List;
 
-/**
- * Created by ASUS on 2017/12/21.
- */
+
+
 
 public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ViewHolder>{
 
